@@ -6,7 +6,9 @@
     <title>ALEZ | bio</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { 
+            scroll-behavior: smooth; /* Только плавная прокрутка по якорям */
+        }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
             background: #000; 
@@ -29,6 +31,7 @@
             align-items: center;
         }
         
+        /* ✅ УБРАЛ scroll-snap-align - теперь прокрутка нормальная */
         section { 
             min-height: 100vh; 
             position: relative; 
@@ -38,14 +41,13 @@
         .content { width: 100%; text-align: center; position: relative; z-index: 2; }
         h2 { font-size: 3rem; color: #FFD700; margin-bottom: 2rem; }
         
-        /* ✅ ИСПРАВЛЕННЫЕ ПУТИ К КАРТИНКАМ */
+        /* ✅ КАРТИНКИ ИЗ images/ */
         #hero { 
             background-image: url('images/back.jpg'); 
             background-size: cover; 
             background-position: center; 
             background-repeat: no-repeat; 
-            background-color: #000; /* Запасной фон */
-            background-attachment: fixed; /* Парallax эффект */
+            background-color: #000;
         }
         #bio { 
             background-image: url('images/back1.jpg'); 
@@ -160,7 +162,7 @@
     </style>
 </head>
 <body>
-    <!-- ВАШ HTML БЕЗ ИЗМЕНЕНИЙ -->
+    <!-- HTML БЕЗ ИЗМЕНЕНИЙ -->
     <section id="hero">
         <div class="container">
             <div class="content">
