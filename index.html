@@ -21,44 +21,79 @@
         a { color: #FFD700; text-decoration: none; }
         a:hover { text-decoration: underline; }
         
-        /* ИСПРАВЛЕНИЕ: container теперь точно 100vh без padding сверху/снизу */
         .container { 
             max-width: 1200px; 
             margin: 0 auto; 
-            padding: 20px; /* Только горизонтальный padding */
-            height: 100vh; /* Фиксированная высота */
+            padding: 20px;
+            height: 100vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             align-items: center;
         }
         
-        /* Общий стиль секций */
         section { height: 100vh; display: flex; align-items: center; position: relative; }
         .content { width: 100%; text-align: center; position: relative; z-index: 2; }
         h2 { font-size: 3rem; color: #FFD700; margin-bottom: 2rem; }
         
-        /* Hero с фоновой картинкой */
-        #hero { background-image: url('back.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; }
-        #hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.6); z-index: 1; }
-        #hero .content { position: relative; z-index: 2; }
+        /* Hero секции с фонами */
+        #hero { 
+            background-image: url('back.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+        #bio { 
+            background-image: url('back1.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+        #skills { 
+            background-image: url('back2.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+        #projects { 
+            background-image: url('back3.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+        }
+        #contacts { 
+            background: linear-gradient(135deg, #000 0%, #1A1A1A 100%); /* Оставляем градиент для контактов */
+        }
+        
+        /* Затемнение для секций с картинками */
+        #hero::before,
+        #bio::before,
+        #skills::before,
+        #projects::before {
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; right: 0; bottom: 0; 
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: 1; 
+        }
+        
+        /* Текст поверх затемнения */
+        #hero .content,
+        #bio .content,
+        #skills .content,
+        #projects .content { position: relative; z-index: 2; }
+        
         #hero h1 { font-size: 4rem; color: #FFD700; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
         #hero p { font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.95; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); }
         .btn { display: inline-block; background: #FFD700; color: #000; padding: 1rem 2rem; border-radius: 50px; font-weight: bold; transition: transform 0.3s; }
         .btn:hover { transform: scale(1.05); text-decoration: none; }
         
-        /* Bio */
-        #bio { background: #1A1A1A; }
         .bio-text { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
         .bio-text p { margin-bottom: 1.5rem; }
         
-        /* Skills */
-        #skills { background: linear-gradient(135deg, #000 0%, #1A1A1A 100%); }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
         .skill-item { background: rgba(255,215,0,0.1); padding: 2rem 1rem; border-radius: 20px; border: 1px solid #FFD700; }
         
-        /* Projects */
-        #projects { background: #1A1A1A; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
         .project-card { background: #000; border: 1px solid #FFD700; border-radius: 20px; overflow: hidden; transition: transform 0.3s; max-height: 300px; }
         .project-card:hover { transform: translateY(-10px); }
@@ -67,8 +102,6 @@
         .project-info h3 { color: #FFD700; margin-bottom: 0.5rem; font-size: 1.2rem; }
         .project-info p { font-size: 0.9rem; margin-bottom: 1rem; opacity: 0.8; }
         
-        /* Contacts */
-        #contacts { background: linear-gradient(135deg, #000 0%, #1A1A1A 100%); }
         .contacts-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; font-size: 1.5rem; margin-top: 2rem; }
         .contacts-list a { display: flex; align-items: center; gap: 0.5rem; padding: 1rem; background: rgba(255,215,0,0.1); border-radius: 10px; border: 1px solid #FFD700; transition: background 0.3s; }
         .contacts-list a:hover { background: rgba(255,215,0,0.2); }
@@ -89,12 +122,11 @@
     </style>
 </head>
 <body>
-    <!-- Ваш HTML остался ТОЧНО таким же -->
     <section id="hero">
         <div class="container">
             <div class="content">
                 <h1>Привет, я - ALEZ</h1>
-                <p>Фуллстек-разработчик с опытом в веб-технологиях</p>
+                "                <p>Фуллстек-разработчик с опытом в веб-технологиях</p>
                 <a href="#projects" class="btn">Мои проекты</a>
             </div>
         </div>
