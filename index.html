@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ✅ ИКОНКА В ТАБЛИЦЕ -->
     <link rel="icon" type="image/png" href="images/logo/ico.png" sizes="32x32">
     <link rel="apple-touch-icon" href="images/logo/ico.png">
     <title>ALEZ | bio</title>
@@ -108,64 +107,56 @@
         .bio-text { font-size: 1.2rem; max-width: 800px; margin: 0 auto; }
         .bio-text p { margin-bottom: 1.5rem; }
         
-        /* ✅ ПЛАВАЮЩИЕ ИКОНКИ С БОЛЬШИМИ РАССТОЯНИЯМИ */
+        /* ✅ ПЛАВАЮЩИЕ ИКОНКИ - МАКСИМАЛЬНО РАСКИДАНЫ */
         .skills-float { 
             position: relative; 
-            width: 100%; 
-            height: 70vh; 
-            max-width: 1100px; 
+            width: 100vw; 
+            height: 80vh; 
             margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         .skill-icon {
             position: absolute;
-            width: 100px; height: 100px;
+            width: 110px; height: 110px;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            border-radius: 25px;
-            border: 2px solid rgba(255,215,0,0.3);
-            transition: all 0.3s ease;
+            border-radius: 30px;
+            border: 3px solid rgba(255,215,0,0.4);
+            transition: all 0.4s ease;
             cursor: pointer;
         }
         .skill-icon:hover {
-            transform: scale(1.2) rotate(5deg);
+            transform: scale(1.25) rotate(8deg);
             border-color: #FFD700;
-            box-shadow: 0 0 40px rgba(255,215,0,0.7);
+            box-shadow: 0 0 50px rgba(255,215,0,0.8);
         }
         
-        /* ✅ РАСШИРЕННЫЕ ПОЗИЦИИ - МАКСИМАЛЬНО РАСКИДАНЫ */
-        .django { background-image: url('images/skills/django.png'); left: 0%; top: 5%; }
-        .react { background-image: url('images/skills/react.png'); right: 0%; top: 10%; }
-        .python { background-image: url('images/skills/python.png'); left: 5%; top: 50%; }
-        .cpp { background-image: url('images/skills/cpp.png'); right: 5%; top: 45%; }
-        .tg { background-image: url('images/skills/tg.png'); left: 50%; top: 15%; }
-        .html { background-image: url('images/skills/html.png'); right: 18%; top: 75%; }
-        .css { background-image: url('images/skills/css.png'); left: 20%; top: 80%; }
-        .js { background-image: url('images/skills/js.png'); right: 40%; top: 25%; }
+        /* ✅ Позиции ПК - КРАЯ ЭКРАНА */
+        .django { background-image: url('images/skills/django.png'); left: 5%; top: 10%; }
+        .react { background-image: url('images/skills/react.png'); right: 5%; top: 15%; }
+        .python { background-image: url('images/skills/python.png'); left: 10%; top: 55%; }
+        .cpp { background-image: url('images/skills/cpp.png'); right: 10%; top: 50%; }
+        .tg { background-image: url('images/skills/tg.png'); left: 55%; top: 20%; }
+        .html { background-image: url('images/skills/html.png'); right: 25%; top: 80%; }
+        .css { background-image: url('images/skills/css.png'); left: 30%; top: 85%; }
+        .js { background-image: url('images/skills/js.png'); right: 45%; top: 30%; }
         
-        /* ПЛАВАЮЩИЕ АНИМАЦИИ */
-        @keyframes floatUpDown {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-25px); }
-        }
-        @keyframes floatUpDown2 {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        @keyframes floatUpDown3 {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-30px); }
-        }
+        /* АНИМАЦИИ */
+        @keyframes float1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+        @keyframes float2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-25px); } }
+        @keyframes float3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-35px); } }
         
-        .django { animation: floatUpDown 3s ease-in-out infinite; }
-        .react { animation: floatUpDown2 3.5s ease-in-out infinite reverse; }
-        .python { animation: floatUpDown 4s ease-in-out infinite; }
-        .cpp { animation: floatUpDown2 2.8s ease-in-out infinite reverse; }
-        .tg { animation: floatUpDown3 3.2s ease-in-out infinite; }
-        .html { animation: floatUpDown 3.8s ease-in-out infinite reverse; }
-        .css { animation: floatUpDown2 4.2s ease-in-out infinite; }
-        .js { animation: floatUpDown3 3s ease-in-out infinite reverse; }
+        .django { animation: float1 3s ease-in-out infinite; }
+        .react { animation: float2 3.5s ease-in-out infinite reverse; }
+        .python { animation: float1 4s ease-in-out infinite; }
+        .cpp { animation: float2 2.8s ease-in-out infinite reverse; }
+        .tg { animation: float3 3.2s ease-in-out infinite; }
+        .html { animation: float1 3.8s ease-in-out infinite reverse; }
+        .css { animation: float2 4.2s ease-in-out infinite; }
+        .js { animation: float3 3s ease-in-out infinite reverse; }
         
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
         .project-card { background: #000; border: 1px solid #FFD700; border-radius: 20px; overflow: hidden; transition: transform 0.3s; max-height: 300px; padding: 1.5rem; }
@@ -178,11 +169,10 @@
         .contacts-list a { display: flex; align-items: center; gap: 0.5rem; padding: 1rem; background: rgba(255,215,0,0.1); border-radius: 10px; border: 1px solid #FFD700; transition: background 0.3s; }
         .contacts-list a:hover { background: rgba(255,215,0,0.2); }
         
-        /* ОСНОВНАЯ АНИМАЦИЯ */
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
         section { animation: fadeInUp 1s ease-out; }
         
-        /* АДАПТИВНОСТЬ */
+        /* ✅ АДАПТИВНОСТЬ - ТЕЛЕФОН */
         @media (max-width: 768px) {
             #hero h1 { font-size: 2rem !important; }
             h2 { font-size: 1.8rem !important; }
@@ -192,17 +182,17 @@
             #hero .content { flex-direction: column; gap: 1rem; }
             .btn { padding: 0.8rem 1.5rem !important; font-size: 0.9rem !important; margin: 0.3rem 0 !important; min-width: 200px; }
             
-            /* ИКОНКИ НА ТЕЛЕФОНЕ */
-            .skill-icon { width: 80px; height: 80px !important; }
-            .skills-float { height: 70vh !important; }
-            .django { left: 0% !important; top: 0% !important; }
-            .react { right: 0% !important; top: 0% !important; }
-            .python { left: 0% !important; top: 40% !important; }
-            .cpp { right: 0% !important; top: 35% !important; }
-            .tg { left: 35% !important; top: 10% !important; }
-            .html { right: 10% !important; top: 65% !important; }
-            .css { left: 10% !important; top: 70% !important; }
-            .js { right: 25% !important; top: 20% !important; }
+            /* ✅ ТЕЛЕФОН - НОВЫЕ ПОЗИЦИИ */
+            .skills-float { height: 75vh !important; }
+            .skill-icon { width: 85px; height: 85px !important; }
+            .django { left: 2% !important; top: 5% !important; }
+            .react { right: 2% !important; top: 5% !important; }
+            .python { left: 2% !important; top: 45% !important; }
+            .cpp { right: 2% !important; top: 40% !important; }
+            .tg { left: 45% !important; top: 15% !important; }
+            .html { right: 15% !important; top: 75% !important; }
+            .css { left: 15% !important; top: 80% !important; }
+            .js { right: 30% !important; top: 25% !important; }
             
             .projects-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; max-width: 100% !important; }
             .project-card { max-height: 250px !important; padding: 1rem !important; }
@@ -218,8 +208,8 @@
             #hero p { font-size: 1rem !important; }
             .container { padding: 10px !important; }
             .btn { padding: 0.7rem 1.2rem !important; font-size: 0.85rem !important; min-width: 240px !important; }
-            .skill-icon { width: 70px; height: 70px !important; }
-            .skills-float { height: 65vh !important; }
+            .skill-icon { width: 75px; height: 75px !important; }
+            .skills-float { height: 70vh !important; }
         }
     </style>
 </head>
