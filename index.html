@@ -5,50 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALEZ | bio</title>
     <style>
-        /* ✅ КРИТИЧЕСКИЕ ИСПРАВЛЕНИЯ ДЛЯ ТОЧНОГО РАЗМЕРА */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { 
+        html { 
+            scroll-behavior: smooth; 
             height: 100%; 
-            overflow: hidden; /* Убираем ВСЕ лишние прокрутки */
         }
-        html { scroll-behavior: smooth; }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
             background: #000; 
             color: #fff; 
             line-height: 1.6; 
+            overflow-x: hidden;
+            min-height: 100vh;
         }
         
         a { color: #FFD700; text-decoration: none; }
         a:hover { text-decoration: underline; }
         
-        /* ✅ ТОЧНЫЙ container БЕЗ padding сверху/снизу */
         .container { 
-            width: 100vw; /* Полная ширина экрана */
-            height: 100vh; /* Полная высота экрана */
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px; /* ТОЛЬКО горизонтальный padding */
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; /* Только горизонтальный padding */
+            height: 100vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             align-items: center;
         }
         
-        section { 
-            height: 100vh; 
-            width: 100vw; /* Точно на весь экран */
-            position: relative; 
-            display: flex; 
-            align-items: center;
-        }
-        .content { 
-            width: 100%; 
-            max-width: 1200px;
-            text-align: center; 
-            position: relative; 
-            z-index: 2; 
-        }
+        section { height: 100vh; position: relative; display: flex; align-items: center; }
+        .content { width: 100%; text-align: center; position: relative; z-index: 2; }
         h2 { font-size: 3rem; color: #FFD700; margin-bottom: 2rem; }
         
         /* Фоны */
@@ -110,7 +96,7 @@
             h2 { font-size: 2rem; }
             .projects-grid, .skills-grid { grid-template-columns: 1fr; }
             .contacts-list { flex-direction: column; align-items: center; }
-            .container { padding: 0 10px; }
+            .container { padding: 10px; }
         }
     </style>
 </head>
